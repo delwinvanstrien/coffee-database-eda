@@ -30,7 +30,7 @@ GROUP BY product_category;
 ---
 
 **2. For each** `customer_gender` **and** `loyalty_member` **type, show the number of records. Within the same outcome, within each** `customer_gender` **and** `loyalty_member` **type, for each** `is_repeat_customer` **type, show the number of records.**
-``` sql
+```sql
 SELECT 
     t1.customer_gender, 
     t1.loyalty_member, 
@@ -83,7 +83,7 @@ ORDER BY
 ---
 
 **3. For each** `product_category` **and** `customer_discovery_source`, **display the sum of** `total_amount`.
-``` sql
+```sql
 SELECT 
     product_category, 
     customer_discovery_source, 
@@ -118,7 +118,7 @@ ORDER BY product_category;
 ---
 
 **4. Consider consuming coffee as the beverage. For each** `time_of_day` **category and** `gender`, **display the average** `focus_level` **and average** `sleep_quality`.
-``` sql
+```sql
 SELECT 
     CASE
         WHEN time_of_day_morning = 'True' THEN 'morning' 
@@ -159,7 +159,7 @@ ORDER BY FIELD(time_of_day, 'morning', 'afternoon', 'evening'), gender;
 ---
 
 **5. There are problems with the data in the table:** `list_coffee_shops_in_kota_bogor`. **List out the problematic records.**
-``` sql
+```sql
 SELECT 
     t1.no, 
     t1.url_id, 
@@ -204,7 +204,7 @@ ORDER BY t1.location_name;
 ---
 
 **6. List the amount of spending (money) recorded before 12 and after 12. Before 12 is defined as the time between 0 and < 12 hours. After 12 is defined as the time between =12 and <24 hours.**
-``` sql
+```sql
 SELECT period, SUM(CAST(money AS DECIMAL(10,2))) AS amt
 FROM 
 (
@@ -242,7 +242,7 @@ ORDER BY period DESC;
 ---
 
 **7. Consider 7 categories of pH values betwen 0 and 7. For each category of pH values, show the average Liking, Flavor Intensity, Acidity, and Mouthfeel.**
-``` sql
+```sql
 SELECT 
     t1.pH, 
     ROUND(t2.avgLiking, 2) AS avgLiking, 
@@ -303,7 +303,7 @@ ORDER BY t1.pH;
 ---
 
 **8. Which stores are consistently top performers from March to July, and what characteristics do they share?**
-``` sql
+```sql
 SELECT 
     CASE month_num
         WHEN 3 THEN 'MAR'
