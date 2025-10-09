@@ -338,7 +338,6 @@ db.coffeesales.aggregate([
 - Adds fields to identify cash payments and convert revenue to numeric values.  
 - Groups data by coffee type to calculate total orders, total revenue, and cash-specific orders and revenue.  
 - Computes the share of cash orders and cash revenue for each coffee type.  
-- Sorts the coffee types by cash revenue share in descending order.
 
 **Result:**
 ```javascript
